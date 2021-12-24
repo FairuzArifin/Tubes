@@ -53,7 +53,7 @@
     <?php 
 	    session_start();
 	    if($_SESSION['level']==""){
-		    header("location:login/login.php?pesan=gagal");
+		    header("location:login/login.php?pesan=curang");
 	    }
     ?>
 
@@ -91,7 +91,15 @@
               </ul>
             </li>
             <li>
-              <a class="disabled">Hubungi Kami</a>
+              <a href="#pageTubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Postingan</a>
+            <ul class="collapse list-unstyled" id="pageTubmenu">
+              <li>
+                <a href="../Posting/lihatpostingan.php">Resep Dari Anggota Lainnya</a>
+              </li>
+              <li>
+                <a href="../Posting/buatpostingan.php">Berbagi Resep Anda Disini</a>
+              </li>
+            </ul>
             </li>
             <li class="active">
               <a href="saran.php">Saran dan Kritikan</a>
@@ -129,6 +137,7 @@
 
     <div class="container"> <div class=" text-center mt-5 ">
         <h1>Saran Dan Kritikan</h1>
+        <h5>Dikarenakan web ini masih dalam pengembangan, kami selaku pengurus dari situs ini mengharapkan partisipasi anda untuk memberikan saran dan kritikan mengenai situs resep makanan yang telah kami buat. Hal ini bertujuan untuk meningkatkan kualitas web kami kedepannya. Atas waktunya kami ucapkan terima kasih buat</h5><br>
     </div>
     <div class="row ">
         <div class="col mx-auto">
