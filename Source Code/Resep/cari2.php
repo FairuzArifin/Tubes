@@ -49,7 +49,7 @@
     <?php 
 	    session_start();
 	    if($_SESSION['level']==""){
-		    header("location:../Akun/login.php?pesan=gagal");
+		    header("location:../Akun/login.php?pesan=curang");
 	    }
     ?>
 
@@ -89,7 +89,15 @@
               </ul>
             </li>
             <li>
-              <a class="disabled">Hubungi Kami</a>
+              <a href="#pageTubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Postingan</a>
+            <ul class="collapse list-unstyled" id="pageTubmenu">
+              <li>
+                <a href="../Posting/lihatpostingan.php">Resep Dari Anggota Lainnya</a>
+              </li>
+              <li>
+                <a href="../Posting/buatpostingan.php">Berbagi Resep Anda Disini</a>
+              </li>
+            </ul>
             </li>
             <li>
               <a href="../Saran/saran.php">Saran dan Kritikan</a>
@@ -168,7 +176,7 @@
 
         if (isset($_POST['cari'])) {
           $cari=trim($_POST['cari']);
-          $sql="SELECT * FROM makanan WHERE makanan LIKE '%".$cari."%' AND asal WHERE 'Kalimantan dan Sulawesi' ORDER BY id ASC";
+          $sql="SELECT * FROM makanan WHERE makanan LIKE '%".$cari."%' AND asal LIKE 'Kalimantan dan Sulawesi' ORDER BY id ASC";
         } else {
           $sql="SELECT * FROM makanan WHERE asal LIKE 'Kalimantan dan Sulawesi' ORDER BY id ASC";
         }
