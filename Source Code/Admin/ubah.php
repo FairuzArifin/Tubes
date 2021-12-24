@@ -178,7 +178,7 @@
               if ($koneksi){
                 $sql = "UPDATE akun SET username='$user',password='$pass',nama='$nama',email='$email' WHERE id=$no";
                 mysqli_query($koneksi,$sql);
-                  echo "<p class='alert alert-success text-center'><b>Perubahan Akun Berhasil Disimpan. <a href='akun.php' class='btn btn-primary'>Kembali</a></b></p>";
+                  echo "<p class='alert alert-success text-center'><b>Perubahan Akun Berhasil Disimpan. <a href='admin.php' class='btn btn-primary'>Kembali</a></b></p>";
               } elseif ($koneksi->connect_error) {
                 echo "<p class='alert alert-danger text-center><b>Terjadi kesalahan: $error</b></p>";
               }       

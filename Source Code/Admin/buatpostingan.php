@@ -20,9 +20,9 @@
     <?php 
 	    session_start();
 	    if($_SESSION['level']=="anggota"){
-		    header("location:Akun/login.php?pesan=gagal");
+		    header("location:../Akun/login.php?pesan=gagal");
 	    } else if($_SESSION['level']==""){
-		    header("location:Akun/login.php?pesan=gagal");
+		    header("location:../Akun/login.php?pesan=gagal");
         }
     ?>
     <?php
@@ -144,7 +144,7 @@
                     <td><center><input type="text" name="judul" placeholder="Judul" class="in"></center><br></td>
 				</tr>
 				<tr>
-				    <td><center><input type="text" name="penulis" class="in" placeholder="Nama Penulis (Boleh Dikosongkan)"></center><br></td>
+				    <td><center><input type="text" name="penulis" class="in" readonly value="<?php echo $_SESSION['nama'] ?>"></center><br></td>
 				</tr>
                 <tr>
 		    		<td><textarea class="ckeditor" id="ckedtor" name="resep"></textarea></td>

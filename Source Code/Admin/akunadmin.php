@@ -20,9 +20,9 @@
     <?php 
 	    session_start();
 	    if($_SESSION['level']=="anggota"){
-		    header("location:Akun/login.php?pesan=gagal");
+		    header("location:../Akun/login.php?pesan=gagal");
 	    } else if($_SESSION['level']==""){
-		    header("location:Akun/login.php?pesan=gagal");
+		    header("location:../Akun/login.php?pesan=gagal");
         }
     ?>
 
@@ -112,7 +112,8 @@
         <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Akun Admin</h6>
-                <h6><button style="margin-top:10px; background-color:black;"><a href="laporan-admin.php">Download Laporan PDF</a></button></h6>
+                <h6><button style="margin-top:10px; margin-left:335px; background-color:black;"><a href="laporan-admin.php">Download Laporan PDF</a></button></h6>
+                <h6><button style="margin-top:10px; background-color:blue;"><a href="laporan-excel-admin.php">Download Laporan Excel</a></button></h6>
             </div>
             <div class="card-body" style="overflow-x:auto;">
             

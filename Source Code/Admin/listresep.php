@@ -113,7 +113,8 @@
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Daftar Resep Terdaftar</h6>
-                <h6><button style="margin-top:10px; background-color:black;"><a href="laporan-resep.php">Download Laporan PDF</a></button></h6>
+                <h6><button style="margin-top:10px; margin-left:250px; background-color:black;"><a href="laporan-resep.php">Download Laporan PDF</a></button></h6>
+                <h6><button style="margin-top:10px; background-color:blue;"><a href="laporan-excel-resep.php">Download Laporan Excel</a></button></h6>
             </div>
             <div class="card-body" style="overflow-x:auto;">
     <br>

@@ -20,9 +20,9 @@
     <?php 
 	    session_start();
 	    if($_SESSION['level']=="anggota"){
-		    header("location:Akun/login.php?pesan=gagal");
+		    header("location:../Akun/login.php?pesan=gagal");
 	    } else if($_SESSION['level']==""){
-		    header("location:Akun/login.php?pesan=gagal");
+		    header("location:../Akun/login.php?pesan=gagal");
         }
     ?>
 

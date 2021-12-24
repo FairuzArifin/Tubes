@@ -22,7 +22,6 @@ $pdf->SetFont('Times','',10);
 
 include '../includes/koneksi.php';
 
-//Query untuk mengambil data mahasiswa pada tabel mahasiswa
 $hasil = mysqli_query($koneksi, "SELECT * FROM makanan ORDER BY id ASC");
 while ($data = mysqli_fetch_array($hasil)){
     $pdf->Cell(10,6,$data['id'],1,0,'C');
