@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="Sidebar/css/style.css">
+  <link rel="stylesheet" href="../alert/dist/sweetalert.css">
+	  <script src="../alert/dist/sweetalert.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
@@ -82,12 +84,12 @@
                 <a href="../Akun/login.php">Masuk</a>
               </li>
               <li>
-                <a href="../Akun/register.html">Mendaftar</a>
+                <a href="../Akun/register.php">Mendaftar</a>
               </li>
               </ul>
             </li>
             <li>
-              <a class="disabled">Hubungi Kami</a>
+              <a href="#" onclick="klik()">Posting Resep</a>
             </li>
             <li>
               <a href="../Saran/saran.html">Saran dan Kritikan</a>
@@ -301,6 +303,11 @@
 
     <!-- Script -->
 
+    <script>
+      function klik(){
+        swal('Khusus Anggota !', 'Fitur Ini Hanya Tersedia Bagi Anggota  ', 'error')
+      }
+    </script>
     <script src="Sidebar/js/jquery.min.js"></script>
     <script src="Sidebar/js/popper.js"></script>
     <script src="Sidebar/js/bootstrap.min.js"></script>
