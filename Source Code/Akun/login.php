@@ -40,7 +40,7 @@
             <button type="submit" name="btnlogin">Login</button><br><br>
 
             <div class="already" style="margin-top:2px">
-                Belum Punya Akun ? <a href="register.html">Buat Akun Baru</a>
+                Belum Punya Akun ? <a href="register.php">Buat Akun Baru</a>
             </div>
 
         </form>
@@ -50,6 +50,8 @@
 	    if(isset($_GET['pesan'])){
 		    if($_GET['pesan']=="gagal"){
 			    echo "<div class='alert' style='margin-top:170px; margin-left:590px; position:absolute; color:red;'><h5>Username tidak ditemukan !</h5></div>";
+		    }  else if($_GET['pesan']=="curang"){
+			    echo "<div class='alert' style='margin-top:170px; margin-left:610px; position:absolute; color:red;'><h5>Anda Belum Login !</h5></div>";
 		    }
 	    }
 	?>

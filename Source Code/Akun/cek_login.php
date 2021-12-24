@@ -25,12 +25,14 @@
 		    $_SESSION['level'] = "admin";     
 		    header("location:../admin/admin.php");
             $_SESSION['nama'] = $nama;
+            $_SESSION['email'] = $email;
             
         } else if ($data['level']=="anggota"){
 	        $_SESSION['username'] = $username;
 	        $_SESSION['level'] = "anggota";
 		    header("location:../index.php");
             $_SESSION['nama'] = $nama;
+            $_SESSION['email'] = $email;
 	    } else {
 		    header("location:login.php?pesan=gagal");
     	}	
