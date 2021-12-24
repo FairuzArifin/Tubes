@@ -1,113 +1,23 @@
+
 <?php
-include "../includes/koneksi.php";
+
+require_once 'includes/koneksi.php';
+
+?>
+
+<?php
+
+$nama = $_POST['nama'];
+$email = $_POST['email'];
+$isi =$_POST['isi'];
 $tanggal = date("Y-m-d");
-$simpan = mysqli_query($koneksi, "INSERT INTO komentar
-                      (nama,email,komentar,tanggal) 
-                      VALUES('$_POST[nama]',
-                      '$_POST[email]',
-                      '$_POST[isi]',
-                      '$tanggal')");
-if($simpan){
-    header('Location:../Resep/angeunlada.php');
-    header('Location:../Resep/asamkeueng.php');
-    header('Location:../Resep/aunusenebre.php');
-    header('Location:../Resep/ayamaroha.php');
-    header('Location:../Resep/ayambumbubali.php');
-    header('Location:../Resep/ayamcincane.php');
-    header('Location:../Resep/ayamiloni.php');
-    header('Location:../Resep/ayampaniki.php');
-    header('Location:../Resep/ayamtaliwang.php');
-    header('Location:../Resep/baladocumiasin.php');
-    header('Location:../Resep/baladojengkol.php');
-    header('Location:../Resep/bebekbetutu.php');
-    header('Location:../Resep/beberukterong.php');
-    header('Location:../Resep/berego.php');
-    header('Location:../Resep/bikaambon.php');
-    header('Location:../Resep/borobbo.php');
-    header('Location:../Resep/bubursagu.php');
-    header('Location:../Resep/chaikue.php');
-    header('Location:../Resep/colocolo.php');
-    header('Location:../Resep/cumibakarricarica.php');
-    header('Location:../Resep/dagingbelancang.php');
-    header('Location:../Resep/dagingmasakhitam.php');
-    header('Location:../Resep/daunubitumbuk.php');
-    header('Location:../Resep/ebikering.php');
-    header('Location:../Resep/eslaksamanamengamuk.php');
-    header('Location:../Resep/gabing.php');
-    header('Location:../Resep/ganganmanok.php');
-    header('Location:../Resep/gohuiikantuna.php');
-    header('Location:../Resep/gudegsolo.php');
-    header('Location:../Resep/gulaiikanpatin.php');
-    header('Location:../Resep/gulaitempoyakikanpatin.php');
-    header('Location:../Resep/gulopuan.php');
-    header('Location:../Resep/ikanbakarmanokwari.php');
-    header('Location:../Resep/ikanbungkus.php');
-    header('Location:../Resep/ikancuka.php');
-    header('Location:../Resep/ikankuahkuning.php');
-    header('Location:../Resep/ikanmasakkayu.php');
-    header('Location:../Resep/ikanpalumara.php');
-    header('Location:../Resep/ikanparende.php');
-    header('Location:../Resep/jemputjemputpisang.php');
-    header('Location:../Resep/juhuumbutrotan.php');
-    header('Location:../Resep/kabuto.php');
-    header('Location:../Resep/kalumpe.php');
-    header('Location:../Resep/kapurung.php');
-    header('Location:../Resep/karedok.php');
-    header('Location:../Resep/karikambing.php');
-    header('Location:../Resep/keraktelor.php');
-    header('Location:../Resep/ketanbintul.php');
-    header('Location:../Resep/ketupatkandangan.php');
-    header('Location:../Resep/kohukohu.php');
-    header('Location:../Resep/kuebingka.php');
-    header('Location:../Resep/kueengkakketan.php');
-    header('Location:../Resep/kuekuikui.php');
-    header('Location:../Resep/kuelapola.php');
-    header('Location:../Resep/kuepadarman.php');
-    header('Location:../Resep/kuetetu.php');
-    header('Location:../Resep/laksa.php');
-    header('Location:../Resep/laksan.php');
-    header('Location:../Resep/lalampa.php');
-    header('Location:../Resep/lawa.php');
-    header('Location:../Resep/lemang.php');
-    header('Location:../Resep/lumpia.php');
-    header('Location:../Resep/mieaceh.php');
-    header('Location:../Resep/miekoba.php');
-    header('Location:../Resep/mielendir.php');
-    header('Location:../Resep/mietarempa.php');
-    header('Location:../Resep/nasikrawu.php');
-    header('Location:../Resep/nasilapola.php');
-    header('Location:../Resep/nasisubut.php');
-    header('Location:../Resep/nasitimbel.php');
-    header('Location:../Resep/pampistongkol.php');
-    header('Location:../Resep/papeda.php');
-    header('Location:../Resep/pempekpalembang.php');
-    header('Location:../Resep/pendap.php');
-    header('Location:../Resep/perutikanbumbukeringkayu.php');
-    header('Location:../Resep/pindangikanpatin.php');
-    header('Location:../Resep/rabeg.php');
-    header('Location:../Resep/rendang.php');
-    header('Location:../Resep/rotijalakarispesial.php');
-    header('Location:../Resep/salepisang.php');
-    header('Location:../Resep/sambalkrecek.php');
-    header('Location:../Resep/sayurasamkutai.php');
-    header('Location:../Resep/sayurgaro.php');
-    header('Location:../Resep/sayurtagastagas.php');
-    header('Location:../Resep/seruit.php');
-    header('Location:../Resep/sinonggi.php');
-    header('Location:../Resep/sotobetawi.php');
-    header('Location:../Resep/sotomedan.php');
-    header('Location:../Resep/supgangan.php');
-    header('Location:../Resep/supkonro.php');
-    header('Location:../Resep/suptunakuahasam.php');
-    header('Location:../Resep/tekwan.php');
-    header('Location:../Resep/tempoyak.php');
-    header('Location:../Resep/timphan.php');
-    header('Location:../Resep/tinutuan.php');
-    header('Location:../Resep/tiwul.php');
-    header('Location:../Resep/tumisaleales.php');
-    header('Location:../Resep/tumistudai.php');
-    header('Location:../Resep/udangselingkuh.php');
-    header('Location:../Resep/ulilulia.php');
+
+$sql = "INSERT INTO komentar (nama, email, komentar, tanggal)VALUES('$nama', '$email', '$isi', '$tanggal')";
+if($koneksi->query($sql)===TRUE){  
+    echo "<script>history.go(-1) </script> "; 
+} else {
+    echo "Terjadi kesalahan:". $sql."<br/>".$koneksi->error;
 }
+$koneksi->close();
 
 ?>

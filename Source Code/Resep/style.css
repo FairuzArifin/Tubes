@@ -72,3 +72,27 @@ footer {
     font-size: 18px;
     border-radius: 5px;
 }
+
+.like {
+    padding: 10px 15px;
+    background: none;
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    border-radius: 5px;
+    color: black;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+  
+.dislike {
+    padding: 10px 15px;
+    background: none;
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    border-radius: 5px;
+    color: black;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }

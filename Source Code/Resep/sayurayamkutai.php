@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
 	  <link rel="stylesheet" href="Sidebar/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
@@ -21,7 +22,7 @@
 <?php 
 	    session_start();
 	    if($_SESSION['level']==""){
-		    header("location:../Akun/login.php?pesan=gagal");
+		    header("location:../Akun/login.php?pesan=curang");
 	    }
     ?>
 
@@ -61,7 +62,15 @@
               </ul>
             </li>
             <li>
-              <a class="disabled">Hubungi Kami</a>
+              <a href="#pageTubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Postingan</a>
+            <ul class="collapse list-unstyled" id="pageTubmenu">
+              <li>
+                <a href="../Posting/lihatpostingan.php">Resep Dari Anggota Lainnya</a>
+              </li>
+              <li>
+                <a href="../Posting/buatpostingan.php">Berbagi Resep Anda Disini</a>
+              </li>
+            </ul>
             </li>
             <li>
               <a href="../Saran/saran.php">Saran dan Kritikan</a>
@@ -153,19 +162,19 @@
       <div class="panel-body">
         <form method="POST" action="simpan_komentar.php">
           <input type="hidden" name="idresep"><div class="form-group">
-            <label>Nama Anda : </label>
-            <input type="text" name="nama" class="form-control">
+            <label>Nama : </label>
+            <input type="text" name="nama" class="form-control" style="width: 400px; padding: 10px;" readonly value="<?php echo $_SESSION['nama'] ?>">
           </div>
           <div class="form-group">
-            <label>Email Anda : </label>
-            <input type="email" name="email" class="form-control">
+            <label>Email : </label>
+            <input type="email" name="email" class="form-control" style="width: 400px; padding: 10px;" readonly value="<?php echo $_SESSION['email'] ?>">
           </div>
           <div class="form-group">
             <label>Isi Komentar : </label>
-            <textarea class="form-control" name="isi"></textarea>
+            <textarea class="form-control" style="width: 500px; padding: 10px;" name="isi" required></textarea>
           </div>
           <div class="form-group">
-            <input type="submit" name="simpan" class="btn btn-primary" value="simpan komentar">
+            <input type="submit" name="simpan" class="btn btn-primary" value="Kirim Komentar">
           </div>
         </form>
         <br><br>
@@ -180,18 +189,39 @@
     while($row = mysqli_fetch_assoc($result)){
       $komentar[]= $row;
     }
-    //var_dump($komentar);
-    echo "<table class='table table-bordered'>";
-    echo "<tr><th>Nama</th><th>Email</th><th>Isi Komentar</th><th>Tanggal</th></tr>";
+    echo "<h5>Komentar Anda</h5>";
      foreach ($komentar as $data) {
-         echo "<tr>";
-         echo "<td>$data[nama]";
-         echo "<td>$data[email]";
-         echo "<td>$data[komentar]";
-         echo "<td>$data[tanggal]";
-         echo "</tr>";
+      echo "<div class='container'>";
+         echo "<hr>";
+         echo "<span style='font-size: 90%'>$data[nama]</span> • <span style='font-size: 90%''>$data[email]</span>";
+         echo "<p><h6>$data[komentar]</h6></p>";
+         echo "<span style='float:left; font-size: 80%;'>$data[tanggal]</span>";
+         echo "<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css'>";
+         echo "<button class='dislike' style='padding: 10px 15px;
+                                              font-size: 14px;
+                                              border-radius: 5px;
+                                              color: black;
+                                              outline: none;
+                                              border: none;
+                                              cursor: pointer;
+                                              float: right;'>
+                  <span id='icon2'><i class='fas fa-thumbs-down'></i></span>
+                  <span id='count2'>0</span>
+               </button>
+               <button class='like' style='padding: 10px 15px;
+                                           font-size: 14px;
+                                           border-radius: 5px;
+                                           color: black;
+                                           outline: none;
+                                           border: none;
+                                           cursor: pointer;
+                                           float: right;'>
+                   <span id='icon'><i class='fas fa-thumbs-up'></i></span>
+                   <span id='count'>0</span>
+                   </button>";
+         echo "<br>";
+         echo "</div>";
      }
-    echo "</table>";
     ?>
 
 
@@ -323,6 +353,7 @@
     <script src="Sidebar/js/bootstrap.min.js"></script>
     <script src="Sidebar/js/main.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="Style CSS/like.js"></script>
   
 </body>
 </html>
