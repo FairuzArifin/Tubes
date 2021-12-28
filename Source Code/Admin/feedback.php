@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="style.css">
 	  <link rel="stylesheet" href="../Sidebar/css/style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="../alert/dist/sweetalert.css">
+	  <script src="../alert/dist/sweetalert.js"></script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
     </style>
@@ -20,9 +22,9 @@
     <?php 
 	    session_start();
 	    if($_SESSION['level']=="anggota"){
-		    header("location:../Akun/login.php?pesan=gagal");
+		    header("location:Akun/login.php?pesan=curang");
 	    } else if($_SESSION['level']==""){
-		    header("location:../Akun/login.php?pesan=gagal");
+		    header("location:Akun/login.php?pesan=gagal");
         }
     ?>
 
@@ -143,9 +145,9 @@
                 if ($koneksi){
                     $sql = "DELETE FROM saran WHERE id=$id";
                     mysqli_query($koneksi,$sql);
-                    echo "<p class='alert alert-success text-center'><b>Data Akun Berhasil Dihapus.</b></p>";
+                    echo "<script>swal('Berhasil !', 'Data Feedback Berhasil Di Hapus  ', 'success');</script>";
                 } elseif ($koneksi->connect_error){
-                    echo "<p class='alert alert-danger text-center><b>Data gagal dihapus. Terjadi kesalahan: ". $koneksi->connect_error. "</b></p>";
+                  echo "<script>swal('Terjadi Kesalahan !', 'Data Gagal Dihapus', 'error');</script>";
                 }
                 }
                 ?>

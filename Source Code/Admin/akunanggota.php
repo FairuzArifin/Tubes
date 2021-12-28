@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
 	  <link rel="stylesheet" href="../Sidebar/css/style.css">
+    <link rel="stylesheet" href="../alert/dist/sweetalert.css">
+	  <script src="../alert/dist/sweetalert.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
@@ -147,11 +149,11 @@
                 if (isset($_POST['btnHapus'])){
                     $id=$_POST['id'];
                 if ($koneksi){
-                    $sql = "DELETE FROM akun WHERE id=$id";
+                    $sql = "DELETE FROM saran WHERE id=$id";
                     mysqli_query($koneksi,$sql);
-                    echo "<p class='alert alert-success text-center'><b>Data Akun Berhasil Dihapus.</b></p>";
+                    echo "<script>swal('Berhasil !', 'Data Akun Berhasil Di Hapus  ', 'success');</script>";
                 } elseif ($koneksi->connect_error){
-                    echo "<p class='alert alert-danger text-center><b>Data gagal dihapus. Terjadi kesalahan: ". $koneksi->connect_error. "</b></p>";
+                  echo "<script>swal('Terjadi Kesalahan !', 'Data Gagal Dihapus', 'error');</script>";
                 }
                 }
                 ?>
