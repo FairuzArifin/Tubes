@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Des 2021 pada 03.54
+-- Waktu pembuatan: 29 Des 2021 pada 08.24
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 8.0.11
 
@@ -47,8 +47,9 @@ INSERT INTO `akun` (`id`, `username`, `password`, `nama`, `email`, `level`) VALU
 (4, 'davidstephan', 'david123', 'David Stephan Bangun', 'stephandavid88@gmail.com', 'admin'),
 (5, 'flemingsaragih', 'flem123', 'Fleming Rabbidores Saragih', 'flemingsaragih@gmail.com', 'admin'),
 (6, 'sofiearianti', 'sofiearzz', 'Sofie Arianti Anggriani', 'angrianisofie@gmail.com', 'admin'),
-(7, 'haloteman', 'haloteman', 'Panggil Saya Udin', 'teman@gmail.com', 'anggota'),
-(8, '', '', '', '', 'anggota');
+(7, 'sayatamu', 'tamu1', 'Tamu 1', 'tamu@gmail.com', 'anggota'),
+(8, 'sayatamu2', 'tamu2', 'Tamu 2', 'tamu2@gmail.com', 'anggota'),
+(28, 'haloteman', 'ahh', 'dadasd', 'udin123@gmail.com', 'anggota');
 
 -- --------------------------------------------------------
 
@@ -71,7 +72,9 @@ CREATE TABLE `komentar` (
 --
 
 INSERT INTO `komentar` (`id`, `nama`, `email`, `komentar`, `tanggal`, `aktif`, `id_resep`) VALUES
-(1, 'Udin', 'teman@gmail.com', 'Wah, terima kasih atas resepnya !', '2021-12-14', 'Y', 0);
+(1, 'Fairuz Arifin', 'yuuarifin@gmail.com', 'Wah bagus resepnya !', '2021-12-18', 'Y', 0),
+(17, 'Dhani Dwi Septian Bangun', 'ddsbg27@gmail.com', 'Keren !!', '2021-12-21', 'Y', 0),
+(18, 'Tamu 1', 'tamu@gmail.com', 'Mantap resepnya !', '2021-12-23', 'Y', 0);
 
 -- --------------------------------------------------------
 
@@ -211,8 +214,7 @@ CREATE TABLE `posting` (
 --
 
 INSERT INTO `posting` (`id`, `judul`, `penulis`, `resep`) VALUES
-(6, 'Perkedel Tahu', 'Sofie', '<p><strong>Bahan:</strong></p>\n\n<ul>\n	<li>400 gr tahu putih</li>\n	<li>150 gr daging kornet</li>\n	<li>1 sdt bawang merah goreng, haluskan</li>\n	<li>1 sdm garam</li>\n	<li>1/2 sdt merica bubuk</li>\n	<li>2 butir telur</li>\n	<li>1 batang daun bawang, iris tipis</li>\n	<li>Minyak goreng secukupnya</li>\n</ul>\n\n<p><strong>Cara membuat:</strong></p>\n\n<ol>\n	<li>Hancurkan tahu menggunakan punggung garpu. Masukkan kornet, bawang goreng, garam, dan merica. Aduk hingga rata.</li>\n	<li>Tambahkan telur dan daun bawang, aduk rata kembali.</li>\n	<li>Panaskan minyak, masukkan adonan yang telah dibentuk lonjong menggunakan bantuan dua buah sendok. Balik sekali saja saat satu sisi sudah matang dan mengering. Goreng hingga matang kedua sisinya. Angkat, tiriskan.</li>\n	<li>Perkedel tahu kornet siap disajikan.</li>\n</ol>\n'),
-(11, 'Bakso Sapi', 'Fairuz', '<p><img alt=\"\" src=\"https://saintif.com/wp-content/uploads/2018/07/Bakso.jpg\" style=\"height:150px; margin-left:300px; margin-right:250px; width:267px\" /></p>\n\n<p>Bahan pentol bakso sapi:</p>\n\n<ul>\n	<li>Daging sapi 1 kg, giling</li>\n	<li>Tepung kanji 50 g</li>\n	<li>Telur 1 butir</li>\n	<li>Lada bubuk 2 sdt</li>\n	<li>Garam 1 sdt</li>\n	<li>Bawang putih 4 siung, haluskan</li>\n	<li>Es batu 40 g, hancurkan</li>\n	<li>Air 2 liter</li>\n</ul>\n\n<p>Cara membuat pentol bakso sapi:</p>\n\n<ul>\n	<li>Masukkan daging sapi yang telah digiling ke dalam wadah, campurkan tepung kanji, telur, lada bubuk, garam dan bawang putih yang telah dihaluskan.</li>\n	<li>Campur atau uleni dengan tangan atau bisa menggunakan alat sampai semua tercampur sempurna.</li>\n	<li>Jika dirasa adonan masih lembek dan sulit dibentuk, maka bisa ditambahkan es batu secara perlahan sampai dirasa adonan bisa dibentuk.</li>\n	<li>Rebus air dalam panci sampai mendidih.</li>\n	<li>Ambil adonan daging dengan tangan lalu bentuk bulat baik dengan kedua tangan atau dengan satu tangan ditekan hingga adonan keluar melalui jari telunjuk dan jempol.</li>\n	<li>Masukkan adonan yang telah terbentuk ke dalam air panas.</li>\n	<li>Lanjutkan hingga semua adonan habis.</li>\n	<li>Jika pentol telah mengapung maka pentol telah matang. Angkat</li>\n</ul>\n');
+(1, 'Bakso Sapi', 'Fairuz Arifin', '<p><img alt=\"\" src=\"https://saintif.com/wp-content/uploads/2018/07/Bakso.jpg\" style=\"height:150px; margin-left:300px; margin-right:250px; width:267px\" /></p>\n\n<p>Bahan pentol bakso sapi:</p>\n\n<ul>\n	<li>Daging sapi 1 kg, giling</li>\n	<li>Tepung kanji 50 g</li>\n	<li>Telur 1 butir</li>\n	<li>Lada bubuk 2 sdt</li>\n	<li>Garam 1 sdt</li>\n	<li>Bawang putih 4 siung, haluskan</li>\n	<li>Es batu 40 g, hancurkan</li>\n	<li>Air 2 liter</li>\n</ul>\n\n<p>Cara membuat pentol bakso sapi:</p>\n\n<ul>\n	<li>Masukkan daging sapi yang telah digiling ke dalam wadah, campurkan tepung kanji, telur, lada bubuk, garam dan bawang putih yang telah dihaluskan.</li>\n	<li>Campur atau uleni dengan tangan atau bisa menggunakan alat sampai semua tercampur sempurna.</li>\n	<li>Jika dirasa adonan masih lembek dan sulit dibentuk, maka bisa ditambahkan es batu secara perlahan sampai dirasa adonan bisa dibentuk.</li>\n	<li>Rebus air dalam panci sampai mendidih.</li>\n	<li>Ambil adonan daging dengan tangan lalu bentuk bulat baik dengan kedua tangan atau dengan satu tangan ditekan hingga adonan keluar melalui jari telunjuk dan jempol.</li>\n	<li>Masukkan adonan yang telah terbentuk ke dalam air panas.</li>\n	<li>Lanjutkan hingga semua adonan habis.</li>\n	<li>Jika pentol telah mengapung maka pentol telah matang. Angkat</li>\n</ul>\n');
 
 -- --------------------------------------------------------
 
@@ -243,7 +245,9 @@ INSERT INTO `saran` (`id`, `firstname`, `lastname`, `email`, `saran`) VALUES
 -- Indeks untuk tabel `akun`
 --
 ALTER TABLE `akun`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `nama` (`nama`),
+  ADD KEY `email` (`email`);
 
 --
 -- Indeks untuk tabel `komentar`
@@ -277,13 +281,13 @@ ALTER TABLE `saran`
 -- AUTO_INCREMENT untuk tabel `akun`
 --
 ALTER TABLE `akun`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT untuk tabel `komentar`
 --
 ALTER TABLE `komentar`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT untuk tabel `makanan`
@@ -295,13 +299,13 @@ ALTER TABLE `makanan`
 -- AUTO_INCREMENT untuk tabel `posting`
 --
 ALTER TABLE `posting`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT untuk tabel `saran`
 --
 ALTER TABLE `saran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
